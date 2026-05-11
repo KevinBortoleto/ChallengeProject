@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'clear-sans', sans-serif;
+}
+
+header {
+    background-color: #ffffff;
+    min-height: 7vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 15px;
+    color: white;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+header img {
+    height: 4dvh;
+    width: auto;
+    margin: 20px;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    font-size: 16px;
+}
+header nav ul li a {
+    color: #000;
+    cursor: pointer;
+    font-weight: 500;
+    text-decoration: none;
+}
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+.menu-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #1a5276;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+}
+
+header button {
+    background-color: #2e86c1;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 20px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 100px 20px;
+    background-color: #aed6f1;
+    text-align: center;
+    height: 70dvh;
+}
+
+.main #info {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main h1 {
+    font-size: 6dvh;
+    color: #1a5276;
+    font-family: 'Bebas Neue', cursive;
+    font-weight: lighter;
+    margin-bottom: 10px;
+}
+
+.main h1 span {
+    color: #2e86c1;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.main p {
+    font-size: 2.5dvh;
+    color: #666666;
+    max-width: 40dvw;
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    width: 40dvw;
+}
+
+.buttonsMain #talkEl {
+    background-color: #2e86c1;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 20px;
+    margin-right: 20px;
+    font-weight: bolder;
+}
+
+.buttonsMain #learnMore {
+    background-color: #ffffff;
+    color: #2e86c1;
+    border: 2px solid #2e86c1;
+    padding: 7px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+.buttonsMain #talkEl:hover {
+    background-color: #1a5276;
+}
+
+.buttonsMain #learnMore:hover {
+    background-color: #2e86c1;
+    color: white;
+}
+
+#first-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 80px;
+}
+
+#first-info h1 {
+    font-size: 5dvh;
+    color: #1a5276;
+    font-family: 'Bebas Neue', cursive;
+    font-weight: lighter;
+}
+
+#first-info p {
+    font-size: 2.5dvh;
+    color: #666666;
+    max-width: 40dvw;
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    width: 40dvw;
+    justify-content: center;
+}
+
+/* ========= RESPONSIVO ========= */
+@media screen and (max-width: 800px) {
+    .main h1 {
+        font-size: 5dvh;
+    }
+
+    .main p {
+        font-size: 2.5dvh;
+        max-width: 100dvw;
+        width: 90dvw;
+    }
+
+    .menu-hamburger {
+        display: flex;
+        z-index: 1001;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 250px;
+        height: 100vh;
+        background-color: #ffffff;
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+        transition: 0.3s;
+        z-index: 1000;
+    }
+
+    .nav-menu.open {
+        right: 0;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        padding-top: 100px;
+        padding-left: 30px;
+        gap: 25px;
+    }
+
+    .portal-btn {
+        display: none;
+    }
+
+    /* Cards em mobile: coluna única */
+    #first-info p {
+        max-width: 90dvw;
+        width: 90dvw;
+    }
+
+    .buttonsMain #talkEl {
+        font-size: 16px;
+        margin-right: 10px;
+    }
+
+    .buttonsMain #learnMore {
+        font-size: 15px;
+    }
+}
+.second-page {
+    background: linear-gradient(160deg, #2e86c1, #1a5276);
+}
