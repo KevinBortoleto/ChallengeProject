@@ -1,11 +1,18 @@
 import { useState } from 'react'
 import ElevenLogo from './assets/Eleven.png'
 import './App.css'
-import Card from './components/cardsInfo'
+import Card from './components/CardsInfo'
 import ChatBot from './components/ChatBot'
+import CardsHooks from './components/CardsHooks'
+import HospitalSearch from './components/HospitalSearch'
+import DoctorSearch from './components/DoctorSearch'
+import DoctorPortal from './components/DoctorPortal'
 
 function App() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
+  const [showPortal, setShowPortal] = useState(false)
+
+  if (showPortal) return <DoctorPortal onBack={() => setShowPortal(false)} />
 
   return (
     <>
@@ -22,13 +29,15 @@ function App() {
           <ul>
             <li><a href="#info">INFORMAÇÕES</a></li>
             <li><a href="#ia">FALE COM A IA</a></li>
-            <li><a href="#care">APOIO</a></li>
+            <li><a href="#first-info">APOIO</a></li>
             <li><a href="#places">LOCAIS</a></li>
             <li><a href="#doctors">MÉDICOS</a></li>
           </ul>
         </nav>
 
-        <button className="portal-btn">Portal médico</button>
+        <button className="portal-btn" onClick={() => setShowPortal(true)}>
+          Portal médico
+        </button>
       </header>
 
       <section className="main">
@@ -47,23 +56,27 @@ function App() {
           <h1>O que você precisa saber?</h1>
           <p>Informações claras e confiáveis sobre o câncer de próstata</p>
         </div>
-        <Card
-          title="Título do Card"
-          description="Uma descrição breve e informativa sobre o conteúdo."
-          image="https://via.placeholder.com/320x180"
-          footer="Publicado em maio de 2026"
-        />
+        <Card />
       </section>
+
       <section className="second-page" id="ia">
         <ChatBot />
       </section>
+
       <section className="third-page" id="hooks">
-        <Card
-          title="Título do Card"
-          description="Uma descrição breve e informativa sobre o conteúdo."
-          image="https://via.placeholder.com/320x180"
-          footer="Publicado em maio de 2026"
-        />
+        <div id='first-info'>
+          <h1>O que você precisa saber?</h1>
+          <p>Informações claras e confiáveis sobre o câncer de próstata</p>
+        </div>
+        <CardsHooks />
+      </section>
+
+      <section id="places">
+        <HospitalSearch />
+      </section>
+
+      <section id="doctors">
+        <DoctorSearch />
       </section>
     </>
   )

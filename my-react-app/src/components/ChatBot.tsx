@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect, CSSProperties } from 'react'
+const balaoIcon = new URL('../assets/balao-de-fala.png', import.meta.url).href
 
 interface Message {
   id: number
@@ -108,7 +109,7 @@ export default function ChatBot() {
 
       <div style={styles.chatWrapper}>
         <div style={styles.chatHeader}>
-          <div style={styles.avatar}>💬</div>
+          <img src={balaoIcon} alt="Ícone de balão de fala" style={styles.avatar} />
 
           <div>
             <div style={styles.botName}>El</div>
@@ -122,7 +123,7 @@ export default function ChatBot() {
         <div style={styles.messagesArea}>
           {messages.length === 0 && !loading && (
             <div style={styles.emptyState}>
-              <span style={styles.emptyIcon}>💬</span>
+              <img src={balaoIcon} alt="Ícone de balão de fala" style={styles.emptyIcon} />
 
               <p style={styles.emptyText}>
                 Digite uma pergunta para começar
@@ -215,7 +216,7 @@ const styles: Record<string, CSSProperties> = {
     flexDirection: 'column',
     alignItems: 'center',
     gap: '32px',
-    padding: '80px 20px',
+    padding: '140px 20px',
   },
 
   sectionInfo: {
@@ -224,17 +225,17 @@ const styles: Record<string, CSSProperties> = {
   },
 
   sectionTitle: {
-    fontSize: '42px',
-    marginBottom: '12px',
+    fontSize: '50px',
+    marginBottom: '15px',
   },
 
   sectionSubtitle: {
-    fontSize: '16px',
+    fontSize: '20px',
   },
 
   chatWrapper: {
     width: '100%',
-    maxWidth: '480px',
+    maxWidth: '600px',
     borderRadius: '16px',
     overflow: 'hidden',
     display: 'flex',
@@ -251,7 +252,9 @@ const styles: Record<string, CSSProperties> = {
   },
 
   avatar: {
-    fontSize: '28px',
+    width: '28px',
+    height: '28px',
+    objectFit: 'contain',
   },
 
   botName: {
@@ -265,8 +268,8 @@ const styles: Record<string, CSSProperties> = {
   },
 
   messagesArea: {
-    minHeight: '360px',
-    maxHeight: '360px',
+    minHeight: '450px',
+    maxHeight: '500px',
     overflowY: 'auto',
     padding: '20px 16px',
     display: 'flex',
@@ -284,7 +287,9 @@ const styles: Record<string, CSSProperties> = {
   },
 
   emptyIcon: {
-    fontSize: '36px',
+    width: '48px',
+    height: '48px',
+    objectFit: 'contain',
   },
 
   emptyText: {
