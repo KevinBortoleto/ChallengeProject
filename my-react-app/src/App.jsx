@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import ElevenLogo from './assets/Eleven.png'
 import './App.css'
-import Card from './components/CardsInfo'
+import Card from './components/cardsInfo'
 import ChatBot from './components/ChatBot'
 import CardsHooks from './components/CardsHooks'
 import HospitalSearch from './components/HospitalSearch'
